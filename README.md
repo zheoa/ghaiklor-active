@@ -1,13 +1,12 @@
 # ghaiklor-os-gcc
 
-This is not a **REAL** operation system.
-It's just a simple operation system created in educational purposes.
+This is an attempt of a **REAL** operating system based in the original project developed by Ghaiklor's in June, 2016.
+It's a complex operating system bifurcation from an original project created for educational and professional purposes.
 
-The main goal I'm following is to learn how OS is working from the ground up.
-Starting from the own boot sector, hardware and software interrupts, own drivers.
+My main goal is create a viable operating system from the original project developed by Ghaiklor's.
+Starting from the own boot sector, hardware and software interrupts, own drivers, like the original project.
 
-Repository is suffixed with gcc because I'm planning to write another one simple OS with Rust.
-So, I hope, there will be _ghaiklor-os-gcc_ and _ghaiklor-os-rustc_.
+So, I hope, this fork can be a viable operating system.
 
 ## Demo
 
@@ -24,6 +23,10 @@ So, I hope, there will be _ghaiklor-os-gcc_ and _ghaiklor-os-rustc_.
   - Checks if CPU support 64-bit Long Mode and switches into (**DONE**)
   - In case, if 64-bit Long Mode isn't supported, fallback into 32-bit (**DONE**)
   - Gives execution to kernel (**DONE**)
+  - Create an Abstract Layer for support more CPU arquitectures than x86-based (**UNCOMPLETED**)
+- Bootloader:
+  - Build an MLVK for support multiple architectures than x86 or x86-64, and support BIOS/UEFI simultaneously (**UNCOMPLETED**)
+  - Configure the MLVK environment for being relocatable and having his own boot standard (like multiboot2) (**UNCOMPLETED**)
 - Kernel:
   - Kernel entry in assembly, which calls extern kernel_main() in C (**DONE**)
   - Low-level I/O functions: _port_byte_in_, _port_byte_out_ and similar (**DONE**)
@@ -31,11 +34,14 @@ So, I hope, there will be _ghaiklor-os-gcc_ and _ghaiklor-os-rustc_.
   - Interrupt Service Routines and their mapping to IDT (**DONE**)
   - Handling Interrupt Requests (IRQ) (**DONE**)
   - Handling IRQ0 of Programmable Interval Timer (**DONE**)
+  - Add a solid C library (**UNCOMPLETED**)
 - Drivers:
   - _screen_ driver implements printing to the screen (**DONE**)
   - _keyboard_ driver listen for IRQ1 interrupt and handle it (**DONE**)
 - Shell:
   - Implement simple echo shell (**DONE**)
+- GUI (**UNDONE**):
+  - Implement a minimal GUI (like Win2K, WinXP or similar) (**UNCOMPLETED**)
 
 ## Project Structure
 
